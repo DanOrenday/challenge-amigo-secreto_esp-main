@@ -5,8 +5,6 @@
 
 let amigos = []; //Array de amigos
 
-
-
 //funciones
 
 //funcion para agregar amigos
