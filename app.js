@@ -10,12 +10,15 @@ let amigos = []; //Array de amigos
 //funciones
 
 //funcion para agregar amigos
-function agregarAmigo(){  //Utilizamos el boton agregarAmigo del html
+function agregarAmigo(){  //Utilizamos el boton agregarAmigo del html 'Añadir'
     let nombreAmigo //Nombre de amigo
     nombreAmigo = document.getElementById("amigo").value;
-    amigos.push(nombreAmigo);
-    if(nombreAmigo === ""){ //Condicion si el nombre esta vacio
+    
+    if(nombreAmigo.length > 1){ //Condicion si el nombre esta vacio
+        amigos.push(nombreAmigo);
+    } else {
         alert("Ingresa el nombre de un amigo");
+        return;
     }
     //document.getElementById("listaAmigos").innerHTML = `<li>${amigos}</li>`;
     mostrarLista();
@@ -24,7 +27,6 @@ function agregarAmigo(){  //Utilizamos el boton agregarAmigo del html
 }
 
 //Mostrar amigos en lista
-
 function mostrarLista(){
 let listaUl = document.getElementById("listaAmigos");
 listaUl.innerHTML = "";
